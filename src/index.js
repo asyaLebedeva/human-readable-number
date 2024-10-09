@@ -1,6 +1,6 @@
 module.exports = function toReadable (number) {
-    let simple = function(num) {
-        switch (num) {
+    let simple = function(number) {
+        switch (number) {
          case 0:
            return "zero";
     
@@ -63,79 +63,79 @@ module.exports = function toReadable (number) {
         };
       };
     
-      let tens = function(num) {
-         if (num >= 0 && num <= 19) {
-                return `${simple(num)}`;
-          } else if (num >= 20 && num < 30) {
-                return `twenty ${simple(num % 10)}`;
-          } else if (num >= 30 && num < 40) {
-                return `thirty ${simple(num % 10)}`;
-          } else if (num >= 40 && num < 50) {
-                return `fourty ${simple(num % 10)}`;
-          } else if (num >= 50 && num < 60) {
-                return `fifty ${simple(num % 10)}`;
-          } else if (num >= 60 && num < 70) {
-                return `sixty ${simple(num % 10)}`;
-          } else if (num >= 70 && num < 80) {
-                return `seventy ${simple(num % 10)}`;
-          } else if (num >= 80 && num < 90) {
-                return `eighty ${simple(num % 10)}`;
-          } else if (num >= 90 && num < 100) {
-                return `ninety ${simple(num % 10)}`;
+      let tens = function(number) {
+         if (number >= 0 && number <= 19) {
+                return `${simple(number)}`;
+          } else if (number >= 20 && number < 30) {
+                return `twenty ${simple(number % 10)}`;
+          } else if (number >= 30 && number < 40) {
+                return `thirty ${simple(number % 10)}`;
+          } else if (number >= 40 && number < 50) {
+                return `fourty ${simple(number % 10)}`;
+          } else if (number >= 50 && number < 60) {
+                return `fifty ${simple(number % 10)}`;
+          } else if (number >= 60 && number < 70) {
+                return `sixty ${simple(number % 10)}`;
+          } else if (number >= 70 && number < 80) {
+                return `seventy ${simple(number % 10)}`;
+          } else if (number >= 80 && number < 90) {
+                return `eighty ${simple(number % 10)}`;
+          } else if (number >= 90 && number < 100) {
+                return `ninety ${simple(number % 10)}`;
           } else {
                 return "This is not a digit";
           };
       };
     
-      let hundreds = function(num) {
-          if (num === 100) {
+      let hundreds = function(number) {
+          if (number === 100) {
                 return "one hundred";
-          } else if (num > 100 && num < 200) {
-                return `one hundred ${tens(num % 100)}`;
-          } else if (num === 200) {
+          } else if (number > 100 && number < 200) {
+                return `one hundred ${tens(number % 100)}`;
+          } else if (number === 200) {
                 return "two hundred";
-          } else if (num > 200 && num < 300) {
-                return `two hundred ${tens(num % 100)}`;
-          } else if (num === 300) {
+          } else if (number > 200 && number < 300) {
+                return `two hundred ${tens(number % 100)}`;
+          } else if (number === 300) {
                 return "three hundred";
-          } else if (num > 300 && num < 400) {
-                return `three hundred ${tens(num % 100)}`;
-          } else if (num === 400) {
+          } else if (number > 300 && number < 400) {
+                return `three hundred ${tens(number % 100)}`;
+          } else if (number === 400) {
                 return "four hundred";
-          } else if (num > 400 && num < 500) {
-                return `four hundred ${tens(num % 100)}`;
-          } else if (num === 500) {
+          } else if (number > 400 && number < 500) {
+                return `four hundred ${tens(number % 100)}`;
+          } else if (number === 500) {
                 return "five hundred";
-          } else if (num > 500 && num < 600) {
-                return `five hundred ${tens(num % 100)}`;
-          } else if (num === 600) {
+          } else if (number > 500 && number < 600) {
+                return `five hundred ${tens(number % 100)}`;
+          } else if (number === 600) {
                 return "six hundred";
-          } else if (num > 600 && num < 700) {
-                return `six hundred ${tens(num % 100)}`;
-          } else if (num === 700) {
+          } else if (number > 600 && number < 700) {
+                return `six hundred ${tens(number % 100)}`;
+          } else if (number === 700) {
                 return "seven hundred";
-          } else if (num > 700 && num < 800) {
-                return `seven hundred ${tens(num % 100)}`;
-          } else if (num === 800) {
+          } else if (number > 700 && number < 800) {
+                return `seven hundred ${tens(number % 100)}`;
+          } else if (number === 800) {
                 return "eight hundred";
-          } else if (num > 800 && num < 900) {
-                return `eight hundred ${tens(num % 100)}`;
-          } else if (num === 900) {
+          } else if (number > 800 && number < 900) {
+                return `eight hundred ${tens(number % 100)}`;
+          } else if (number === 900) {
                 return "nine hundred";
-          } else if (num > 900 && num < 1000) {
-                return `nine hundred ${tens(num % 100)}`;
-          } else if (num === 1000) {
+          } else if (number > 900 && number < 1000) {
+                return `nine hundred ${tens(number % 100)}`;
+          } else if (number === 1000) {
                 return "one thousand";
           } else {
                 return "This is not a digit";
         };
       };
       
-      if (num >= 0 && num < 100) {
-          return tens(num);
-      } else if (num >= 100 && num < 1000) {
-          return hundreds(num);
+      if (number >= 0 && number < 100) {
+          return tens(number);
+      } else if (number >= 100 && number < 1000) {
+          return hundreds(number);
       } else {
           return "Try to enter another value";
       }
-}
+};
